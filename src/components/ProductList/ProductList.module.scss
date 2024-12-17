@@ -1,0 +1,55 @@
+@use "../../variables";
+
+.productList {
+  &__section {
+    display: grid;
+  }
+
+  &__sectionHeader {
+    display: grid;
+    justify-content: center;
+
+    h2 {
+      font-family: new-kansas, sans-serif;
+      font-weight: 900;
+      font-style: normal;
+      font-size: 48px;
+      text-transform: uppercase;
+      margin: 0;
+      text-shadow:
+        -0.15em 0.1em black,
+        2px 2px black,
+        2px -2px black,
+        -2px -2px black,
+        -2px 2px black;
+    }
+  }
+
+  &__sectionList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-content: space-around;
+    padding: 32px;
+    gap: 0.5em;
+
+    &--dark-and-roasty {
+      background-color: variables.$drPrimary;
+      color: variables.$drSecondary;
+    }
+
+    &--sweet-and-balanced {
+      background-color: variables.$sbPrimary;
+      color: variables.$sbSecondary;
+    }
+
+    &--herbs-and-spice {
+      background-color: variables.$hsPrimary;
+      color: variables.$hsSecondary;
+    }
+
+    &--fruity-and-floral {
+      background-color: variables.$ffPrimary;
+      color: variables.$ffSecondary;
+    }
+  }
+}

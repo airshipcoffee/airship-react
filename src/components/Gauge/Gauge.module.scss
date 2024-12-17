@@ -1,0 +1,61 @@
+@use "../../variables";
+@use "sass:color";
+
+.gauge {
+  padding: 0;
+  width: 100%;
+  max-width: 300px;
+  font-size: 0.75em;
+  margin: 1em 0;
+
+  &__label {
+    font-family: "canada-type-gibson", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 2em;
+  }
+
+  &__indicator {
+    color: variables.$yellow;
+    position: relative;
+    height: 1.2em;
+    width: 100%;
+
+    div {
+      position: absolute;
+    }
+  }
+
+  &__measurement {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1.25em;
+    background: linear-gradient(
+      to left,
+      variables.$coffeeBean,
+      color.adjust(variables.$coffeeBean, $lightness: 30%)
+    );
+    border: 1px solid black;
+    border-radius: 16px;
+
+    > * {
+      border: 1px solid black;
+    }
+
+    :first-child {
+      border-radius: 16px 0 0 16px;
+      overflow: hidden;
+    }
+
+    :last-child {
+      border-radius: 0 16px 16px 0;
+    }
+  }
+
+  figcaption {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+  }
+}
